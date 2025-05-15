@@ -1,0 +1,1 @@
+# devops-cloudru-camp-2025
