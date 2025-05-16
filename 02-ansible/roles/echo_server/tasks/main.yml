@@ -1,0 +1,20 @@
+- name: Log in to Docker Hub (optional if public image with auth)
+  community.docker.docker_login:
+    registry_url: https://index.docker.io/v1/
+    username: "{{ dockerhub_username | default(omit) }}"
+    password: "{{ dockerhub_password | default(omit) }}"
+  when: dockerhub_username is defined and dockerhub_password is defined
+
+- name: Pull echo-server image
+  community.docker.docker_image:
+    name: "{{ docker_image }}"
+    source: pull
+
+- name: Ensure echo containers are running
+  community.docker.docker_container:
+    name: "echo-server-{{ item }}"
+    image: "{{ docker_image }}"
+    published_ports:
+      - "808{{ item }}:8000"
+    restart_policy: always
+  loop: "{{ range(1, container_count + 1) | list }}"
