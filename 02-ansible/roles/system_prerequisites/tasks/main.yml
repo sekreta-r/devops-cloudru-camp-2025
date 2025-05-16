@@ -1,0 +1,8 @@
+- name: Install system prerequisites for adding repositories
+  ansible.builtin.apt:
+    name:
+      - software-properties-common
+      - curl
+      - gnupg
+    state: present
+    update_cache: true
