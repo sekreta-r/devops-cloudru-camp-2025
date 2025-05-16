@@ -1,0 +1,19 @@
+{
+  "name": "Ansible",
+  "dockerFile": "Dockerfile",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "files.associations": {
+          "inventory/**/*.yml": "ansible",
+          "playbooks/**/*.yml": "ansible",
+          "roles/*.yml": "ansible"
+        }
+      },
+      "extensions": [
+        "donjayamanne.python-extension-pack",
+        "redhat.ansible"
+      ]
+    }
+  }
+}
