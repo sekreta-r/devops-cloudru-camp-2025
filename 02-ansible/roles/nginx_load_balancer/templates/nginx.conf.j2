@@ -1,0 +1,27 @@
+user www-data;
+worker_processes auto;
+pid /run/nginx.pid;
+
+events {
+  worker_connections 768;
+}
+
+http {
+  upstream echo_server {
+    least_conn;
+{% for i in range(1, container_count + 1) %}
+    server 127.0.0.1:808{{ i }};
+{% endfor %}
+  }
+
+  server {
+    listen {{ nginx_port }};
+
+    location / {
+      proxy_pass http://echo_server;
+      proxy_set_header Host $host;
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+  }
+}
