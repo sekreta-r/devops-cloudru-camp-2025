@@ -1,0 +1,13 @@
+galaxy_info:
+  author: sekreta-r <liza.sek.000@gmail.com>
+  license: Apache
+  description: Standart role
+  min_ansible_version: "2.13"
+  platforms:
+    - name: Ubuntu
+      versions:
+        - "jammy"
+
+dependencies:
+  - role: docker
+  - role: nginx_load_balancer

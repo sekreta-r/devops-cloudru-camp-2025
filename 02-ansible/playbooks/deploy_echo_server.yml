@@ -1,0 +1,5 @@
+- name: Deploy echo server with NGINX load balancer
+  hosts: echo-node
+  become: true
+  roles:
+    - echo_server

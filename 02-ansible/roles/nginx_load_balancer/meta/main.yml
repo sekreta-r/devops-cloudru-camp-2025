@@ -1,0 +1,11 @@
+galaxy_info:
+  author: sekreta-r <liza.sek.000@gmail.com>
+  description: Standart role
+  license: Apache
+  min_ansible_version: "2.13"
+  platforms:
+    - name: Ubuntu
+      versions:
+        - "jammy"
+
+dependencies: []

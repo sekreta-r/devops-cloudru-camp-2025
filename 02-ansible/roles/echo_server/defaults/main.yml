@@ -1,0 +1,2 @@
+docker_image: sekretaria/echo-server:0.1.0
+container_count: 3

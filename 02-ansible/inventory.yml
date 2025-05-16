@@ -1,0 +1,13 @@
+all:
+  children:
+    echo-node:
+      hosts:
+        echo-host:
+          ansible_host: 192.168.56.101
+          ansible_user: root
+          # ansible_ssh_private_key_file: ~/.ssh/id_rsa
+
+      vars:
+        docker_image: sekretaria/echo-server:0.1.0
+        container_count: 3
+        nginx_port: 80
