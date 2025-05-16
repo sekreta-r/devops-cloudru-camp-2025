@@ -1,0 +1,18 @@
+{
+	"name": "Python DevContainer",
+	"build": {
+		"dockerfile": "../Dockerfile",
+		"target": "dev"
+	},
+	"forwardPorts": [8000],
+	"postCreateCommand": "poetry install",
+	"overrideCommand": true,
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"exiasr.hadolint",
+				"ms-azuretools.vscode-docker"
+			]
+		}
+	}
+}
