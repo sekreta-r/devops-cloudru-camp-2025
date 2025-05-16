@@ -24,6 +24,8 @@ docker run --rm -e AUTHOR="Sekretaria" -p 8000:8000 sekretaria/echo-server:0.1.0
 После запуска приложение будет доступно по адресу:
 [http://localhost:8000](http://localhost:8000)
 
+Репозиторий: [sekretaria/echo-server on Docker Hub](https://hub.docker.com/r/sekretaria/echo-server)
+
 ## Сборка и публикация Docker-образа
 
 Сборка production-образа:
@@ -46,3 +48,4 @@ docker push sekretaria/echo-server:0.1.0
 
 * `curl`
 * `hadolint` — для анализа Dockerfile на предмет ошибок и несоответствий best practices
+
