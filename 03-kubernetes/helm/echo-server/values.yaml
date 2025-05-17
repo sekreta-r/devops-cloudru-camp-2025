@@ -1,0 +1,22 @@
+replicaCount: 3
+
+image:
+  repository: sekretaria/echo-server
+  tag: "0.1.0"
+  pullPolicy: Always
+
+author: Sekretaria
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 8000
+
+ingress:
+  enabled: true
+  className: nginx
+  host: echo.local
+  path: /
+
+secret:
+  dockerconfigjson: eyJhdXRocyI6eyJodHRwczovL2luZGV4LmRvY2tlci5pby92MS8iOnsidXNlcm5hbWUiOiJzZWtyZXRhcmlhIiwicGFzc3dvcmQiOiJkY2tyX3BhdF83cDE5MVJ5YjBDT19MZHBuanRFdnJ5TjdtMjQiLCJlbWFpbCI6ImxpemEuc2VrLjAwMEBnbWFpbC5jb20iLCJhdXRoIjoiYzJWcmNtVjBZWEpwWVRwa1kydHlYM0JoZEY4M2NERTVNVko1WWpCRFQxOU1aSEJ1YW5SRmRuSjVUamR0TWpRPSJ9fX0=
